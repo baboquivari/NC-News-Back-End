@@ -1,0 +1,35 @@
+{
+  "name": "northcoders-news-api",
+  "version": "1.0.0",
+  "description": "Northcoders News API Sprint",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec/*",
+    "start": "node index.js",
+    "dev": "nodemon incodex.js",
+    "seed:dev": "node ./seed/run-seed.js",
+    "seed:prod": "NODE_ENV=production node seed/run-seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.14"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.6",
+    "supertest": "^3.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hughp23/BE2-northcoders-news.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hughp23/BE2-northcoders-news/issues"
+  },
+  "homepage": "https://github.com/hughp23/BE2-northcoders-news#readme"
+}
