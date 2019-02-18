@@ -1,14 +1,21 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+app.use(cors());
+
 const bodyParser = require("body-parser");
 const apiRouter = require("./routes/apiRouter");
 const mongoose = require("mongoose");
 const DB_URL = process.env.DB_URL || require("./config");
 const { handle400s, handle404s, handle500s } = require("./errorHandlers");
-const cors = require("cors");
 
-app.use(cors());
-app.options('*', cors())
+// app.options('*', cors())
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 mongoose
   .connect(
