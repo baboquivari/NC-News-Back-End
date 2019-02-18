@@ -7,6 +7,9 @@ const DB_URL = process.env.DB_URL || require("./config");
 const { handle400s, handle404s, handle500s } = require("./errorHandlers");
 const cors = require("cors");
 
+app.use(cors());
+app.options('*', cors())
+
 mongoose
   .connect(
     DB_URL,
@@ -16,8 +19,6 @@ mongoose
   .catch(console.log);
 
 // app.set("view engine", "ejs");
-
-app.use(cors());
 
 app.use(bodyParser.json());
 
